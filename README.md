@@ -1,42 +1,42 @@
-# 概要
+# Overview
 
-Angularで自作コンポーネント作成時に双方向バインディングを行うサンプルです。  
-このサンプルではngModelでの双方向バインディングは行いません。（ControlValueAccessor未使用のパターン）  
+It is a sample that performs bi-directional binding when creating self-made components in Angular.  
+This sample does not perform bidirectional binding with ngModel. (ControlValueAccessor unused pattern)  
 
-@Outputのプロパティ名を`＠Inputのプロパティ名+Change`にすることで対応可能です。
+It is possible to correspond by setting the property name of @Output to `@Input property name + Change`.
 
-# 実行環境
+# System requirements
 
 * Node.js 8.9.x
 * TypeScript 2.9.x
 * Angular 6.1.x
 
-# 動作確認  
+# Operation check  
 
-## 1. サンプルのダウンロード
+## 1. Download Sample
 
 ```
 git clone git@github.com:yasu-s/ng-twoway-sample.git
 ```
 
-## 2. パッケージインストール  
+## 2. Installing packages 
 
 ```
 cd ng-twoway-sample
 npm install
 ```
 
-## 3. サンプルの起動  
+## 3. Launch sample application
 
 ```
 npm start
 ```
 
-## 4. 実行結果  
+## 4. Execution result  
 
 ![twoway](https://user-images.githubusercontent.com/2668146/44337941-4d70ab00-a4b7-11e8-9bdc-c14836f6ce42.gif)
 
-# サンプルソース
+# Sample source
 
 ## src/app/custom-list.component.ts
 
@@ -56,19 +56,19 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CustomListComponent {
 
-  /** 表示リスト */
+  /** Display List */
   list: number[] = [1, 2, 3, 4, 5];
 
-  /** 選択値 */
+  /** Selected Value */
   @Input()
   value: number = 0;
 
-  /** 選択値変更 */
+  /** Selected Change Value */
   @Output()
   valueChange = new EventEmitter<number>();
 
   /**
-   * 選択値変更処理
+   * Change Value
    * @param num
    */
   changeValue(num: number): void {
