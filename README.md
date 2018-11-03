@@ -7,9 +7,9 @@ It is possible to correspond by setting the property name of @Output to `@Input 
 
 # System requirements
 
-* Node.js 8.9.x
-* TypeScript 2.9.x
-* Angular 6.1.x
+* Node.js 10.x
+* TypeScript 3.1.x
+* Angular 7.0.x
 
 # Operation check  
 
